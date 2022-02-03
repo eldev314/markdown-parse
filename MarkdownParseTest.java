@@ -45,4 +45,15 @@ public class MarkdownParseTest {
             e.printStackTrace();
         }
     }
+
+    @Test
+    public void testGetLinks5() {
+        String fileName = "test5.md";
+        List<String> expected = List.of("google.com");
+        try {
+            assertTrue("check expected = actual", expected.equals(MarkdownParse.getLinks(Files.readString(Path.of(fileName)))));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }
